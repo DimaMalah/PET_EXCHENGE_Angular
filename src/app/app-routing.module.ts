@@ -6,8 +6,8 @@ import { ContactsPageComponent } from './pages/contacts-page/contacts-page.compo
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 
 const routes: Routes = [
-  {path: '', component: HomePageComponent, title:"EXCHANGE"},
-  {path: 'contacts', component: ContactsPageComponent, title:"Contact Me to hire"},
+  {path: 'PET_EXCHENGE_Angular', component: HomePageComponent, title:"EXCHANGE"},
+  {path: 'PET_EXCHENGE_Angular/contacts', component: ContactsPageComponent, title:"Contact Me to hire"},
   {path: '**', component: ErrorPageComponent, title:"Error"},
 ];
 
