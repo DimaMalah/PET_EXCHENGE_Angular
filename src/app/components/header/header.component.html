@@ -1,0 +1,41 @@
+<div class="bg-[#133d54] py-4 ">
+  <div class="flex flex-row justify-between container max-w-[900px]">
+    <nav >
+      <ul class="flex flex-row ">
+        <li class="text-[#0d6efd] px-4 nav-item"><a routerLink="/" class="nav-link" href="#">Home</a></li>
+        <li class="text-[#0d6efd] px-4 nav-item"><a routerLink="/error" class="nav-link" href="#">Link</a></li>
+        <li class="text-[#0d6efd] px-4 nav-item"><a routerLink="/contacts" class="nav-link" href="#">Contacts</a></li>
+        <li class="text-[#6c7576] px-4 nav-item "><a class="nav-link disabled" href="#" >Disabled</a></li>
+      </ul>
+    </nav>
+
+    <div class="flex flex-row">
+      <div class="flex flex-row">
+        <svg class="text-[#cbcad2]" width="15px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="euro-sign"
+          role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+          <path fill="currentColor"
+            d="M64 240C46.33 240 32 225.7 32 208C32 190.3 46.33 176 64 176H92.29C121.9 92.11 201.1 32 296 32H320C337.7 32 352 46.33 352 64C352 81.67 337.7 96 320 96H296C238.1 96 187.8 128.4 162.1 176H288C305.7 176 320 190.3 320 208C320 225.7 305.7 240 288 240H144.2C144.1 242.6 144 245.3 144 248V264C144 266.7 144.1 269.4 144.2 272H288C305.7 272 320 286.3 320 304C320 321.7 305.7 336 288 336H162.1C187.8 383.6 238.1 416 296 416H320C337.7 416 352 430.3 352 448C352 465.7 337.7 480 320 480H296C201.1 480 121.9 419.9 92.29 336H64C46.33 336 32 321.7 32 304C32 286.3 46.33 272 64 272H80.15C80.05 269.3 80 266.7 80 264V248C80 245.3 80.05 242.7 80.15 240H64z">
+          </path>
+        </svg>
+        <div *ngFor="let cur of currency$ | async"  class="text-[#f8844f]">
+          <span *ngIf="cur.cc==='EUR'" class="px-2">{{rounded(cur.rate)}}</span>
+        </div>
+      </div>
+
+      <div class="flex flex-row pl-4">
+        <svg width="13px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="dollar-sign"
+          class="text-[#cbcad2]" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+          <path fill="currentColor"
+            d="M160 0C177.7 0 192 14.33 192 32V67.68C193.6 67.89 195.1 68.12 196.7 68.35C207.3 69.93 238.9 75.02 251.9 78.31C268.1 82.65 279.4 100.1 275 117.2C270.7 134.3 253.3 144.7 236.1 140.4C226.8 137.1 198.5 133.3 187.3 131.7C155.2 126.9 127.7 129.3 108.8 136.5C90.52 143.5 82.93 153.4 80.92 164.5C78.98 175.2 80.45 181.3 82.21 185.1C84.1 189.1 87.79 193.6 95.14 198.5C111.4 209.2 136.2 216.4 168.4 225.1L171.2 225.9C199.6 233.6 234.4 243.1 260.2 260.2C274.3 269.6 287.6 282.3 295.8 299.9C304.1 317.7 305.9 337.7 302.1 358.1C295.1 397 268.1 422.4 236.4 435.6C222.8 441.2 207.8 444.8 192 446.6V480C192 497.7 177.7 512 160 512C142.3 512 128 497.7 128 480V445.1C127.6 445.1 127.1 444.1 126.7 444.9L126.5 444.9C102.2 441.1 62.07 430.6 35 418.6C18.85 411.4 11.58 392.5 18.76 376.3C25.94 360.2 44.85 352.9 60.1 360.1C81.9 369.4 116.3 378.5 136.2 381.6C168.2 386.4 194.5 383.6 212.3 376.4C229.2 369.5 236.9 359.5 239.1 347.5C241 336.8 239.6 330.7 237.8 326.9C235.9 322.9 232.2 318.4 224.9 313.5C208.6 302.8 183.8 295.6 151.6 286.9L148.8 286.1C120.4 278.4 85.58 268.9 59.76 251.8C45.65 242.4 32.43 229.7 24.22 212.1C15.89 194.3 14.08 174.3 17.95 153C25.03 114.1 53.05 89.29 85.96 76.73C98.98 71.76 113.1 68.49 128 66.73V32C128 14.33 142.3 0 160 0V0z">
+          </path>
+        </svg>
+        <div *ngFor="let cur of currency$ | async" class="text-[#f8844f]">
+          <span *ngIf="cur.cc==='USD'" class="px-2">{{rounded(cur.rate)}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

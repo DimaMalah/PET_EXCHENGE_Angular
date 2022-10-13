@@ -1,0 +1,71 @@
+<div
+  class="flex flex-col items-center mt-10"
+>
+  <h2 class="accordion-header px-auto" id="panelsStayOpen-headingOne">
+    <button (click)="onOpenHandler()" class="btn text-[#f87f51] hover:text-[#b33a2d]" type="button"
+      aria-controls="panelsStayOpen-collapseOne">
+      {{isOpen ? "click to hide input fields" : "click if you want to rate the currency"}}
+    </button>
+  </h2>
+  <div *ngIf="isOpen" id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+    aria-labelledby="panelsStayOpen-headingOne">
+    <div class="currency-container flex flex-row mt-10 items-center text-[#c5c1be]">
+      <div class="currency-wrapper">
+
+        <select
+          name="select"
+          class="select bg-[#133d54] py-1 px-1 text-[#f87f51]"
+          [(ngModel)]="leftCurType"
+          (change)="handleChangeLeftValue()"
+        >
+
+          <option
+            *ngFor="let cur of currency"
+            value = {{cur.cc}}
+          >{{cur.cc}}</option>
+
+        </select>
+
+        <input type="number"
+          placeholder="0"
+          class="input bg-[#133d54] py-1 pl-2 max-w-[150px]"
+          (input)="handleChangeLeftValue()"
+          [(ngModel)]="leftValue"
+        >
+
+      </div>
+
+      <span class="mx-2 text-[#cbcad2]">
+         =
+      </span>
+
+      <div class="currency-wrapper ">
+
+        <select
+          name="select"
+          class="select bg-[#133d54] py-1 px-1 text-[#f87f51]"
+          [(ngModel)]="rightCurType"
+          (change)="handleChangeRightValue()"
+        >
+
+          <option
+            *ngFor="let cur of currency"
+            value = {{cur.cc}}
+          >{{cur.cc}}</option>
+
+        </select>
+
+        <input
+          type="number"
+          placeholder="0"
+          class="input bg-[#133d54] py-1 pl-2 max-w-[150px]"
+          (input)="handleChangeRightValue()"
+          [(ngModel)]="rightValue"
+        >
+
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>
+
